@@ -11,7 +11,8 @@ def rotationX( t ):
 def rotationY( t ):
 	c = numpy.cos(t)
 	s = numpy.sin(t)
-	return numpy.asarray( [[c,0,s],[0,1,0],[-s,0,c]] )
+	#return numpy.asarray( [[c,0,s],[0,1,0],[-s,0,c]] )
+	return numpy.asarray( [[c,0,-s],[0,1,0],[s,0,c]] )
 #
 def rotationZ( t ):
 	c = numpy.cos(t)
