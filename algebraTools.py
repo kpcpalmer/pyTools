@@ -6,18 +6,19 @@ def skewSymmetricMatrix(vector):
 def rotationX( t ):
 	c = numpy.cos(t)
 	s = numpy.sin(t)
-	return numpy.asarray( [[1,0,0], [0,c,-s], [0,s,c]] )
+	return numpy.asarray( [[1,0,0], [0,c,-s], [0,s,c]] )	# a 45 deg rotation will move [0,1,0] to [0,1,1]/sqrt(2)
+	#return numpy.asarray( [[1,0,0], [0,c,s], [0,-s,c]] )	# a 45 deg rotation will move [0,1,0] to [0,1,-1]/sqrt(2)
 #
 def rotationY( t ):
 	c = numpy.cos(t)
 	s = numpy.sin(t)
-	#return numpy.asarray( [[c,0,s],[0,1,0],[-s,0,c]] )
-	return numpy.asarray( [[c,0,-s],[0,1,0],[s,0,c]] )
+	return numpy.asarray( [[c,0,s],[0,1,0],[-s,0,c]] )		# a 45 deg rotation will move [1,0,0] to [1,0,-1]/sqrt(2)
+	#return numpy.asarray( [[c,0,-s],[0,1,0],[s,0,c]] )
 #
 def rotationZ( t ):
 	c = numpy.cos(t)
 	s = numpy.sin(t)
-	return numpy.asarray( [[c,-s,0],[s,c,0],[0,0,1]] )
+	return numpy.asarray( [[c,-s,0],[s,c,0],[0,0,1]] )		# a 45 deg rotation will move [1,0,0] to [1,1,0]/sqrt(2)
 #
 class quaternion( object ):
 	def __init__(self, roll, pitch, yaw):
